@@ -7,8 +7,8 @@
     cat > "$WS_NAME/.idx/dev.nix" << 'DEVNIX'
     { pkgs, ... }: {
       channel = "unstable";
-      packages = [
-        pkgs.coreutils
+      packages = with pkgs; [
+        coreutils
         ${extraPackages}
       ];
       env = {
