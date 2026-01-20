@@ -16,6 +16,15 @@
       };
       idx = {
         extensions = [];
+        previews = {
+          enable = true;
+          previews = {
+            init = {
+              command = ["bash" "-c" "export PATH=$HOME/.local/bin:$PATH; exec &>/tmp/init.log; set -x; for cmd in $(echo $MONOSPACE_ON_CREATE_COMMANDS | jq -r '.[]'); do $cmd; done; for cmd in $(echo $MONOSPACE_ON_START_COMMANDS | jq -r '.[]'); do $cmd; done"];
+              manager = "web";
+            };
+          };
+        };
         workspace = {
           onCreate = {
             ${
