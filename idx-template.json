@@ -1,71 +1,37 @@
 {
-  "name": "WinDev",
-  "description": "Windows Development",
-  "categories": ["Desktop"],
-  "icon": "https://avatars.githubusercontent.com/u/6154722?s=40&v=4",
-  "publisher": "Unknown",
+  "name": "Custom Workspace",
+  "description": "Workspace with custom scripts",
+  "categories": ["Development"],
+  "icon": "https://www.gstatic.com/monospace/250314/workspace-blank-192.png",
+  "publisher": "fatim4h",
   "host": {
     "virtualization": true
   },
   "params": [
     {
-      "id": "osVariant",
-      "name": "Operating System Variant",
-      "type": "enum",
-      "default": "windows",
-      "required": true,
-      "options": {
-        "windows": "Windows",
-        "macos": "macOS",
-        "windows-arm": "Windows ARM"
-      }
-    },
-    {
-      "id": "winVariant",
-      "name": "Windows Variant",
-      "type": "enum",
-      "default": "11",
-      "required": true,
-      "options": {
-        "11": "Windows 11 Pro",
-        "11l": "Windows 11 LTSC",
-        "11e": "Windows 11 Enterprise",
-        "10": "Windows 10 Pro",
-        "10l": "Windows 10 LTSC",
-        "10e": "Windows 10 Enterprise"
-      }
-    },
-    {
-      "id": "macVariant",
-      "name": "macOS Variant",
-      "type": "enum",
-      "default": "15",
-      "required": true,
-      "options": {
-        "15": "macOS 15 (Sequoia)",
-        "14": "macOS 14 (Sonoma)",
-        "13": "macOS 13 (Ventura)",
-        "12": "macOS 12 (Monterey)",
-        "11": "macOS 11 (Big Sur)"
-      }
-    },
-    {
-      "id": "winUser",
-      "name": "Windows User",
+      "id": "initScript",
+      "name": "Init Script (base64)",
       "type": "text",
-      "default": "Bill",
-      "required": true
+      "default": "",
+      "required": false
     },
     {
-      "id": "winPass",
-      "name": "Windows Password",
+      "id": "onCreateScript",
+      "name": "OnCreate Script (base64)",
       "type": "text",
-      "default": "BillGates123@",
-      "required": true
+      "default": "",
+      "required": false
     },
     {
-      "id": "tailscaleAuthKey",
-      "name": "Tailscale Auth Token",
+      "id": "extraPackages",
+      "name": "Extra Nix Packages",
+      "type": "text",
+      "default": "",
+      "required": false
+    },
+    {
+      "id": "extraEnv",
+      "name": "Extra Environment Variables",
       "type": "text",
       "default": "",
       "required": false
